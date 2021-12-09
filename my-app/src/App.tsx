@@ -11,12 +11,12 @@ const App:FC = () =>  {
   const [deadline, setDeadline] = useState<number>(0);
 
   // todo state 
-  const [todo, setTodoList] = useState([]);
+  const [todoList, setTodoList] = useState([]);
 
 
   //fucntion to handle any changes in input and grab events from user input
 
-  const handleChange = (event:ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (event:ChangeEvent<HTMLInputElement>): void  => {
     // if input calls task function 
     if(event.target.name === "task") 
     {
@@ -28,8 +28,11 @@ const App:FC = () =>  {
     }
   }
 
-  // function to add to the todo list 
-  
+  // function to add task to the todo list 
+
+  const addTask = (): void => {
+    setTodoList([...todoList]) //old todo list 
+  }
 
   return (
     <div className="App">
@@ -39,7 +42,7 @@ const App:FC = () =>  {
             <input type="text" placeholder="Task.." name="Task" onChange={handleChange}></input>
             <input type="number" placeholder="Deadline (DAYS).." name="deadline" onChange={handleChange}></input>
           </div>
-          <button>Add Task</button>
+          <button onClick={addTask}>Add Task</button>
       </div>
 
       <div className="todoList">
