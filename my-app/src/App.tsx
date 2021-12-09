@@ -1,5 +1,6 @@
 import React, {FC,ChangeEvent, useState} from 'react'; //add FC = functional component   type changeevent = represents ay events that involve changes and inputs 
 import "./App.css"  //import css
+import TodoTask from './Components/TodoTask'; // import component
 import {ITask} from './Interfaces' //import interface
 
 
@@ -67,8 +68,11 @@ const App:FC = () =>  {
           <button onClick={addTask}>Add Task</button>
       </div>
 
-      <div className="todoList">
-
+      <div className="todoList"> 
+        {/* Map every element in the list adn display each element in the list  */}
+        {todoList.map((task: ITask, key: number) => {
+          return <TodoTask key={key} task={task} />
+        })}
       </div>
 
     </div>
