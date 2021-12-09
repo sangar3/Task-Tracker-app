@@ -43,6 +43,13 @@ const App:FC = () =>  {
     setDeadline(0) // clears deadline 
   }
 
+  // function to remove tasks 
+  const completeTask = (taskNameToDelete:string): void => {
+    setTodoList(todoList.filter((task) => {
+      return task.taskName != taskNameToDelete // goes through all elements in to dolist 
+    })) // set todo list to it self and fiter everything inside of it that has the same name into the function 
+  }
+
   return (
     <div className="App">
 
@@ -71,7 +78,7 @@ const App:FC = () =>  {
       <div className="todoList"> 
         {/* Map every element in the list adn display each element in the list  */}
         {todoList.map((task: ITask, key: number) => {
-          return <TodoTask key={key} task={task} />
+          return <TodoTask key={key} task={task} completeTask={completeTask} />
         })}
       </div>
 
