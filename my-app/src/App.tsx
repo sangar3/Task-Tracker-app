@@ -37,7 +37,9 @@ const App:FC = () =>  {
   {
     const newTask = {taskName: task, deadline: deadline }; // create a task object 
     setTodoList([...todoList, newTask]); //old todo list 
-    console.log(todoList)
+    // console.log(todoList) find what is being added to the list
+    setTask("") // clears tasks
+    setDeadline(0) // clears deadline 
   }
 
   return (
@@ -45,8 +47,22 @@ const App:FC = () =>  {
 
       <div className="header">
           <div className="inputContainer">
-            <input type="text" placeholder="Task.." name="task" onChange={handleChange}></input>
-            <input type="number" placeholder="Deadline (DAYS).." name="deadline" onChange={handleChange}></input>
+            <input 
+            type="text" 
+            placeholder="Task.." 
+            name="task" 
+            onChange={handleChange}
+            value={task}
+            >
+            </input>
+
+            <input 
+            type="number" 
+            placeholder="Deadline (DAYS).." 
+            name="deadline" 
+            onChange={handleChange}
+            value={deadline}>
+            </input>
           </div>
           <button onClick={addTask}>Add Task</button>
       </div>
