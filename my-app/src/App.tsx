@@ -66,13 +66,15 @@ const App:FC = () =>  {
 
             <input 
             type="number" 
+            min="1"
+            max="365"
             placeholder="Deadline (DAYS).." 
             name="deadline" 
             onChange={handleChange}
             value={deadline}>
             </input>
           </div>
-          <button onClick={addTask}>Add Task</button>
+          <button id='AddTaskButton' onClick={addTask}>Add Task</button>
       </div>
 
       <div className="todoList"> 

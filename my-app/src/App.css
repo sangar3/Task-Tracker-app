@@ -1,12 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+:root {
+  --CloseTaskButtonvar: #d62828;
+  --todolistitemvar: #003049;
+  --headervar: #f77f00;
+  --ItemTitlevar:#fcbf49;
+  --AddTaskButtonvar:#eae2b7;
+}
+
 .App{
     display: flex;
     align-items: center;
     flex-direction: column;
     width: 100%;
     height: 100vh;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
-
 
 body {
     margin: 0%;
@@ -14,7 +22,7 @@ body {
 }
 .header {
     flex: 30%;
-    background-color: red;
+    background-color: var(--headervar);
     width: 100%;
     display: flex;
     justify-content: center;
@@ -80,16 +88,28 @@ body {
     height: 100%;
     font-size: 18px;
     border-right: none;
-    background-color: tomato;
+    background-color:var(--todolistitemvar);
   }
   
   .task button {
     flex: 20%;
     height: 100%;
     border: none;
-    background-color: lightseagreen;
+    background-color:var(--CloseTaskButtonvar) ;
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
     color: white;
     cursor: pointer;
   }
+
+#ItemTitle1{
+  background-color:var(--ItemTitlevar)
+}
+#ItemTitle2{
+  background-color:var(--ItemTitlevar)
+}
+
+#AddTaskButton{
+  font-family: 'Montserrat', sans-serif;
+  background-color:var(--AddTaskButtonvar) ;
+}
